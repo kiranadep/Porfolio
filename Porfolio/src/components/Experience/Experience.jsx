@@ -10,7 +10,7 @@ const defaultExperiences = [
     icon: <FaSchool />,
     title: 'SSC – School Education',
     company: 'Nethaji SubhasChandra Bose High School, Solapur',
-    description: '',
+    description: 'Completed my Schooling',
     type: 'education',
   },
   {
@@ -18,7 +18,7 @@ const defaultExperiences = [
     icon: <FaSchool />,
     title: 'Higher Secondary (Science)',
     company: 'D.B.F. Dayanand College of Arts & Science, Solapur',
-    description: '',
+    description: 'Completed Higher Secondary Education',
     type: 'education',
   },
   {
@@ -26,11 +26,11 @@ const defaultExperiences = [
     icon: <FaGraduationCap />,
     title: 'B.Tech – Computer Science',
     company: 'N.K. Orchid College of Engineering & Technology, Solapur',
-    description: '',
+    description: 'Graduated with a Bachelor of Technology in Computer Science & Engineering',
     type: 'education',
   },
 
-  // Internships
+  // Experience
   {
     year: 'May 2024 – Aug 2024',
     icon: <FaBriefcase />,
@@ -41,23 +41,32 @@ const defaultExperiences = [
     type: 'work',
   },
   {
-    year: 'Aug 2024 – Present',
+    year: 'Aug 2024 – April 2026',
     icon: <FaBriefcase />,
     title: 'Software Engineer',
     company: 'LSL Technologies Pvt. Ltd.',
     description:
       'Building scalable backend services and RESTful APIs using Java and Python. Working with Spring Boot, microservices, and relational databases in agile environments.',
     type: 'work',
-    highlight: true,
   },
   {
-    year: 'Present',
+    year: 'April 2026 – June 2026',
     icon: <FaBriefcase />,
-    title: 'Open to Opportunities',
-    company: '',
+    title: 'Software Engineer',
+    company: 'Opethic Softwares',
     description:
-      'Actively seeking full-time Software Developer / Backend Engineer roles where I can build scalable APIs and web applications with clean, maintainable code.',
-    type: 'future',
+      'Engineered backend services and integrated APIs with optimized database queries.',
+    type: 'work',
+  },
+  {
+    year: 'July 2026 – Present',
+    icon: <FaBriefcase />,
+    title: 'Software Trainer (Full Stack Trainer)',
+    company: 'FortuneCloud Solapur',
+    description:
+      'Training and mentoring aspiring developers in Full-Stack web development, Java, Python, .NET, and database architectures.',
+    type: 'work',
+    highlight: true,
   },
 ];
 

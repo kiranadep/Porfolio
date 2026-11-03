@@ -13,62 +13,53 @@ export const personalInfo = {
 export const experiences = [
   {
     year: '2018',
-    title: 'SSC Boards',
-    company: 'Nethaji SubhasChandra Bose High School',
+    title: 'SSC – School Education',
+    company: 'Nethaji SubhasChandra Bose High School, Solapur',
     description: 'Completed my Schooling',
     type: 'education'
   },
   {
     year: '2020',
-    title: 'HSC Boards',
-    company: 'D.B.F Dayanand College of Arts and Science',
-    description: 'Completed my Inter',
+    title: 'Higher Secondary (Science)',
+    company: 'D.B.F. Dayanand College of Arts & Science, Solapur',
+    description: 'Completed Higher Secondary Education',
     type: 'education'
   },
   {
-    year: 'Jan 2021',
-    title: 'N.K. Orchid College of Engineering 🎓',
-    company: 'B.Tech (Computer Science)',
-    description: 'Started My Engineering Journey',
-    type: 'education'
-  },
-  {
-    year: 'Jul 2024',
-    title: 'Completed My Engineering 🎓',
-    company: '',
-    description: 'Successfully graduated with B.Tech in Computer Science',
+    year: 'Jan 2021 – Jul 2024',
+    title: 'B.Tech – Computer Science',
+    company: 'N.K. Orchid College of Engineering & Technology, Solapur',
+    description: 'Graduated with a Bachelor of Technology in Computer Science & Engineering',
     type: 'education'
   },
   {
     year: 'May 2024 – Aug 2024',
-    title: 'Data Analyst Intern',
+    title: 'Data Analyst (Intern)',
     company: 'Zidio Development',
     description: 'Built social-media-driven customer segmentation tools improving targeting by ~15%. Developed voice-based emotion detection and digit recognition modules using CNNs and Tkinter.',
-    type: 'work',
-    highlight: true
+    type: 'work'
   },
   {
-    year: 'Apr 2025 – Oct 2025',
-    title: 'Jr. Software Engineer (Intern)',
-    company: 'Cravita Technologies',
-    description: 'Developed and maintained dynamic ASP.NET Web Forms modules with SQL Server. Optimized stored procedures and backend queries, collaborating with frontend and QA teams for smooth deployments.',
-    type: 'work',
-    highlight: true
-  },
-  {
-    year: 'Aug 2024 – Present',
+    year: 'Aug 2024 – April 2026',
     title: 'Software Engineer',
     company: 'LSL Technologies Pvt. Ltd.',
     description: 'Building scalable backend services and RESTful APIs using Java and Python. Working with Spring Boot, microservices, and relational databases in agile environments.',
-    type: 'work',
-    highlight: true
+    type: 'work'
   },
   {
-    year: 'Present',
-    title: 'Open to Opportunities',
-    company: '',
-    description: 'Actively seeking full-time Software Developer / Backend Engineer roles where I can build scalable APIs and web applications with clean, maintainable code.',
-    type: 'future'
+    year: 'April 2026 – June 2026',
+    title: 'Software Engineer',
+    company: 'Opethic Softwares',
+    description: 'Engineered backend services and integrated APIs with optimized database queries.',
+    type: 'work'
+  },
+  {
+    year: 'July 2026 – Present',
+    title: 'Software Trainer (Full Stack Trainer)',
+    company: 'FortuneCloud Solapur',
+    description: 'Training and mentoring aspiring developers in Full-Stack web development, Java, Python, .NET, and database architectures.',
+    type: 'work',
+    highlight: true
   }
 ];
 
