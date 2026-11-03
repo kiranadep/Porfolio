@@ -1,0 +1,259 @@
+.experience-section {
+  min-height: 100vh;
+  background: linear-gradient(45deg, #212632, #242A34, #3C4C5A);
+  padding: 130px 20px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Righteous', sans-serif;
+  margin-bottom: 60px;
+  color: #fff;
+}
+
+/* =========================
+   TIMELINE – DESKTOP
+   ========================= */
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #5635c4, #CA3EA7);
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+  padding-right: 60px;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+  padding-left: 60px;
+}
+
+.timeline-content {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(202, 62, 167, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-item.highlight .timeline-content {
+  border-color: #CA3EA7;
+  background: rgba(202, 62, 167, 0.1);
+}
+
+.timeline-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #5635c4, #CA3EA7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(86, 53, 196, 0.4);
+}
+
+.timeline-item.left .timeline-icon {
+  right: -25px;
+  top: 30px;
+}
+
+.timeline-item.right .timeline-icon {
+  left: -25px;
+  top: 30px;
+}
+
+.timeline-year {
+  display: inline-block;
+  background: linear-gradient(135deg, #5635c4, #CA3EA7);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.timeline-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.timeline-company {
+  color: #E4454A;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.timeline-description {
+  color: #aaa;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.timeline-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.timeline-badge.education {
+  background: rgba(86, 53, 196, 0.2);
+  color: #a78bfa;
+}
+
+.timeline-badge.work {
+  background: rgba(202, 62, 167, 0.2);
+  color: #f472b6;
+}
+
+.timeline-badge.future {
+  background: rgba(34, 197, 94, 0.2);
+  color: #4ade80;
+}
+
+/* =========================
+   MOBILE (≤ 768px)
+   ========================= */
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .experience-section {
+    padding: 80px 0 50px;
+  }
+
+  .experience-container {
+    max-width: 100%;
+    padding: 0 16px;         /* equal side padding */
+    margin: 0 auto;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .timeline {
+    padding: 10px 0;
+  }
+
+  /* Center the vertical line */
+  .timeline-line {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+  }
+
+  /* Each item is full width, no left offset */
+  .timeline-item {
+    width: 100%;
+    left: 0;
+    padding: 0 0 30px 0;
+    text-align: left !important;
+    box-sizing: border-box;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Center the card horizontally and give all cards the same width */
+  .timeline-content {
+    max-width: 420px;        /* card width */
+    width: 100%;
+    margin: 0 auto;          /* center */
+    padding: 20px;
+    border-radius: 18px;
+
+    display: flex;           /* so we can push year to the right */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Icon above the card, centered on the line */
+  .timeline-item.left .timeline-icon,
+  .timeline-item.right .timeline-icon {
+    top: -25px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .timeline-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  /* YEAR → top‑right inside the card on mobile */
+  .timeline-year {
+    align-self: flex-end;     /* right side of card */
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    padding: 4px 12px;
+  }
+
+  .timeline-title {
+    font-size: 1.1rem;
+  }
+
+  .timeline-company {
+    font-size: 0.9rem;
+  }
+
+  .timeline-description {
+    font-size: 0.85rem;
+  }
+
+  .timeline-badge {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+}

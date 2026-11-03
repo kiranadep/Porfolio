@@ -1,0 +1,50 @@
+.app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.tab-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Ensure proper touch scrolling on mobile */
+@media screen and (max-width: 768px) {
+  .app {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Fix for iOS Safari */
+  .tab-container {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Fix for notch on newer iPhones */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .navbar {
+    padding-top: calc(15px + env(safe-area-inset-top));
+  }
+  
+  .intro-section,
+  .experience-section,
+  .skills-section,
+  .projects-section,
+  .contact-section {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+  
+  .contact-section {
+    padding-bottom: calc(40px + env(safe-area-inset-bottom));
+  }
+}

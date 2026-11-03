@@ -1,0 +1,373 @@
+.projects-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 130px 20px 80px;
+}
+
+.projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Righteous', sans-serif;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #888;
+  margin-bottom: 50px;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project-card:hover {
+  box-shadow: 0 20px 50px rgba(202, 62, 167, 0.3);
+}
+
+.project-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(86, 53, 196, 0.8), rgba(202, 62, 167, 0.8));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.view-details {
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 25px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.view-details:hover {
+  background: #fff;
+  color: #5635c4;
+}
+
+.project-index {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  padding: 10px 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #333;
+  border-top-right-radius: 15px;
+}
+
+.project-info {
+  padding: 25px;
+  color: #333;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.project-type {
+  font-weight: 600;
+  color: #5635c4;
+  font-size: 0.85rem;
+}
+
+.project-date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, rgba(86, 53, 196, 0.1), rgba(202, 62, 167, 0.1));
+  color: #5635c4;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: #CA3EA7;
+}
+
+.modal-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.modal-body {
+  padding: 30px;
+  color: #333;
+}
+
+.modal-body h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #1a1a2e;
+}
+
+.modal-type {
+  color: #5635c4;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.modal-description {
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.modal-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.modal-links {
+  display: flex;
+  gap: 15px;
+}
+
+.modal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #5635c4, #CA3EA7);
+  color: #fff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.modal-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(86, 53, 196, 0.3);
+}
+
+.modal-btn.github {
+  background: #333;
+}
+
+.modal-btn.github:hover {
+  background: #555;
+}
+
+/* Responsive */
+/* MOBILE LAYOUT FOR PROJECT CARDS */
+@media screen and (max-width: 768px) {
+  .projects-section {
+    padding: 80px 0 50px;      /* remove large side padding on mobile */
+  }
+
+  .projects-container {
+    max-width: 100%;
+    padding: 0 16px;           /* symmetric side padding */
+    margin: 0 auto;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;  /* one card per row */
+    gap: 18px;
+    padding: 20px 0;             /* no extra side padding here */
+  }
+
+  /* Center each card and make all cards the same max width */
+  .project-card {
+    max-width: 420px;          /* you can tweak this (380–460) */
+    width: 100%;
+    margin: 0 auto;            /* center horizontally */
+    border-radius: 18px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-image img {
+    height: 100%;
+    object-fit: cover;         /* keeps image nice inside smaller card */
+  }
+
+  .project-info {
+    padding: 16px;
+  }
+}
+
+/* SMALL MOBILE */
+@media screen and (max-width: 480px) {
+  .project-card {
+    max-width: 360px;
+  }
+
+  .project-image {
+    height: 160px;
+  }
+
+  .project-info {
+    padding: 14px;
+  }
+}
+
+/* MODAL CENTERING ON MOBILE */
+@media screen and (max-width: 768px) {
+  .modal-overlay {
+    padding: 80px 16px 24px;  /* top padding so it doesn't touch navbar */
+    align-items: flex-start;  /* start from top but with padding above */
+    justify-content: center;
+  }
+
+  .modal-content {
+    max-width: 420px;
+    width: 100%;
+    border-radius: 18px;
+  }
+
+  .modal-image {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .modal-body {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-overlay {
+    padding-top: 90px;          /* a bit more gap on small phones */
+  }
+
+  .modal-content {
+    max-width: 360px;
+  }
+
+  .modal-image {
+    height: 180px;
+  }
+
+  .modal-body {
+    padding: 16px;
+  }
+}

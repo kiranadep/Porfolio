@@ -1,0 +1,30 @@
+# Virtual Environment
+venv/
+env/
+.venv/
+
+# Environment Variables & Secrets (CRITICAL: Do not commit database password)
+.env
+*.env
+.env.*
+!.env.example
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local Databases
+*.sqlite3
+db.sqlite3
+
+# Uploaded Media & Static collection
+media/
+staticfiles/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

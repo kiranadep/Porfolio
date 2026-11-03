@@ -1,0 +1,121 @@
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 12px 0;
+  background: rgba(26, 26, 46, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.navbar nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;                  /* space between items */
+}
+
+/* =========================
+   NAV ITEM (icon + label)
+   ========================= */
+
+.nav-link {
+  position: relative;
+
+  /* fixed column so center is stable */
+  width: 80px;
+  /* let height adapt to icon + label */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  color: var(--color);
+  cursor: pointer;
+  text-shadow: 0 10px 7px rgba(0, 0, 0, 0.45);
+}
+
+/* Icon */
+.nav-icon {
+  font-size: 22px;
+  z-index: 1;
+}
+
+/* Label directly under the icon */
+.nav-label {
+  margin-top: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+/* =========================
+   UNDERLINE  (DESKTOP)
+   ========================= */
+
+/* This <motion.div> is inside each .nav-link */
+.active-indicator {
+  position: absolute;
+  bottom: -12px;            /* distance below the text */
+  left: 0;                  /* center using left/right + margin */
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  /* IMPORTANT: no transform here, Framer Motion manages transform */
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #5635c4, #CA3EA7);
+  border-radius: 999px;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    padding: 8px 0;
+  }
+
+  .navbar nav {
+    gap: 20px;
+  }
+
+  .nav-icon {
+    font-size: 20px;
+  }
+
+  .nav-label {
+    font-size: 0.7rem;
+    margin-top: 3px;
+  }
+
+  .active-indicator {
+    bottom: -10px;          /* a bit closer on mobile */
+    width: 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar nav {
+    gap: 16px;
+  }
+
+  .nav-icon {
+    font-size: 18px;
+  }
+
+  .nav-label {
+    font-size: 0.65rem;
+  }
+
+  .active-indicator {
+    bottom: -8px;
+    width: 26px;
+  }
+}

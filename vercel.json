@@ -1,0 +1,7 @@
+{
+  "buildCommand": "cd Porfolio && npm run build",
+  "outputDirectory": "Porfolio/build",
+  "installCommand": "cd Porfolio && npm install",
+  "framework": "create-react-app"
+}
+

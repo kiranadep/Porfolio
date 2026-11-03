@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+Porfolio/node_modules/
+backend/venv/
+backend/env/
+.venv/
+venv/
+
+# Environment Variables & Secrets (CRITICAL: Do not commit secrets)
+.env
+*.env
+backend/.env
+backend/*.env
+!.env.example
+backend/!.env.example
+
+# Local SQLite & Databases
+*.sqlite3
+db.sqlite3
+backend/db.sqlite3
+
+# Uploaded Media & Static collection
+backend/media/
+backend/staticfiles/
+media/
+
+# Python Cache & compiled
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# Build outputs
+build/
+Porfolio/build/
+dist/
+
+# Backup folders
+.git_backup/
+Porfolio/.git_backup/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
