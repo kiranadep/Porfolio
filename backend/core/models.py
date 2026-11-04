@@ -16,7 +16,8 @@ class Profile(models.Model):
             "I also work with AI/ML tools and agentic development assistants to ship clean, reliable solutions faster."
         )
     )
-    resume_url = models.CharField(max_length=500, blank=True, default="/assets/KiranAdep_SoftwareEngineer.pdf")
+    resume_url = models.CharField(max_length=500, blank=True, default="", help_text="Or paste a direct URL to your resume PDF")
+    resume = models.FileField(upload_to='resumes/', blank=True, null=True, help_text="Upload your resume PDF (preferred)")
     avatar = models.FileField(upload_to='profile/', blank=True, null=True, help_text="Upload custom avatar photo")
     avatar_url = models.CharField(max_length=500, blank=True, default="/images/photo2.png", help_text="Or direct URL to avatar")
     updated_at = models.DateTimeField(auto_now=True)

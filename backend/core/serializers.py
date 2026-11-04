@@ -4,6 +4,7 @@ from .models import Profile, Project, SkillCategory, Skill, Experience, ContactM
 
 class ProfileSerializer(serializers.ModelSerializer):
     avatar_url = serializers.SerializerMethodField()
+    resume_file_url = serializers.SerializerMethodField()
 
     class Meta:
         model = Profile
@@ -16,6 +17,14 @@ class ProfileSerializer(serializers.ModelSerializer):
             except Exception:
                 pass
         return obj.avatar_url or '/images/photo2.png'
+
+    def get_resume_file_url(self, obj):
+        if obj.resume:
+            try:
+                return obj.resume.url
+            except Exception:
+                pass
+        return obj.resume_url or None
 
 
 class ProjectSerializer(serializers.ModelSerializer):

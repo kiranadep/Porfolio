@@ -11,15 +11,30 @@ const Intro = ({ onTabChange, profile }) => {
     profile?.bio ||
     `I'm a Software Engineer with 2+ years of experience building scalable backend systems, RESTful APIs, and full-stack applications using Java, Python, and C#/.NET. Proficient in Spring Boot, ASP.NET Core, microservices, and relational databases. I also work with AI/ML tools and agentic development assistants (Cursor, GitHub Copilot, Claude Code) to ship clean, reliable solutions faster.`;
 
+  const getBackendBase = () => {
+    if (typeof window !== 'undefined' &&
+      (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
+      return 'http://127.0.0.1:8000';
+    }
+    return 'https://porfolio-jsfz.onrender.com';
+  };
+
   const getAvatarImg = (img) => {
     if (!img) return '/images/photo2.png';
     if (img.startsWith('http') || img.startsWith('/images') || img.startsWith('data:')) {
       return img;
     }
-    return `http://127.0.0.1:8000${img.startsWith('/') ? '' : '/'}${img}`;
+    return `${getBackendBase()}${img.startsWith('/') ? '' : '/'}${img}`;
+  };
+
+  const getResumeUrl = (url) => {
+    if (!url) return resumePdf;
+    if (url.startsWith('http') || url.startsWith('/assets') || url.startsWith('blob:')) return url;
+    return `${getBackendBase()}${url.startsWith('/') ? '' : '/'}${url}`;
   };
 
   const avatarSrc = getAvatarImg(profile?.avatar_url || profile?.avatar);
+  const resumeUrl = getResumeUrl(profile?.resume_file_url || profile?.resume_url);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -116,7 +131,7 @@ const Intro = ({ onTabChange, profile }) => {
             </motion.button>
 
             <motion.a
-              href={profile?.resume_url || resumePdf}
+              href={resumeUrl}
               download="KiranAdep_SoftwareEngineer.pdf"
               className="btn btn-secondary"
               whileHover={{ scale: 1.05 }}

@@ -16,7 +16,7 @@ class ProfileAdmin(admin.ModelAdmin):
             "fields": ("name", "title", "email", "bio", "avatar", "avatar_url")
         }),
         ("Social & Resume", {
-            "fields": ("github_url", "linkedin_url", "resume_url")
+            "fields": ("github_url", "linkedin_url", "resume", "resume_url")
         }),
     )
 
