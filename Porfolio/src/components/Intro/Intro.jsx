@@ -28,8 +28,13 @@ const Intro = ({ onTabChange, profile }) => {
   };
 
   const getResumeUrl = (url) => {
+    // No URL set → use the bundled PDF
     if (!url) return resumePdf;
-    if (url.startsWith('http') || url.startsWith('/assets') || url.startsWith('blob:')) return url;
+    // Old backend default (not a real file) → use the bundled PDF
+    if (url === '/assets/KiranAdep_SoftwareEngineer.pdf') return resumePdf;
+    // Full external URL or blob → use as-is
+    if (url.startsWith('http') || url.startsWith('blob:')) return url;
+    // Relative media path from Render (e.g. /media/resumes/file.pdf) → prefix with backend base
     return `${getBackendBase()}${url.startsWith('/') ? '' : '/'}${url}`;
   };
 
