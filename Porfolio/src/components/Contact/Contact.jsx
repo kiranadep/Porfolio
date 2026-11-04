@@ -65,29 +65,40 @@ const Contact = ({ onTabChange }) => {
     e.preventDefault();
     setIsSending(true);
 
+    let savedToBackend = false;
+
     try {
       // 1. Submit to Django Backend (saves in Database & Django Admin)
       try {
         await submitContactMessage(formData);
+        savedToBackend = true;
       } catch (backendError) {
         console.warn('Backend contact save error (continuing with EmailJS):', backendError);
       }
 
       // 2. Submit to EmailJS
       if (process.env.REACT_APP_EMAILJS_SERVICE_ID) {
-        await emailjs.send(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID,
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-          {
-            from_name: formData.name,
-            from_email: formData.email,
-            message: formData.message
-          },
-          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-        );
+        try {
+          await emailjs.send(
+            process.env.REACT_APP_EMAILJS_SERVICE_ID,
+            process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+            {
+              from_name: formData.name,
+              from_email: formData.email,
+              message: formData.message
+            },
+            process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+          );
+        } catch (emailError) {
+          console.warn('EmailJS error:', emailError);
+          // If already recorded in database, proceed gracefully
+          if (!savedToBackend) {
+            throw emailError;
+          }
+        }
       }
 
-      alert('Message sent successfully!');
+      alert('Message sent successfully! Thank you for reaching out.');
 
       setFormData({
         name: '',
@@ -96,7 +107,7 @@ const Contact = ({ onTabChange }) => {
       });
     } catch (error) {
       console.error('Contact submission Error:', error);
-      alert(`Notice: ${error?.text || error?.message || 'Message processed.'}`);
+      alert(`Notice: ${error?.text || error?.message || 'Message could not be sent.'}`);
     } finally {
       setIsSending(false);
     }
