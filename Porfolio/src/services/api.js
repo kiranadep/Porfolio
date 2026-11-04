@@ -1,6 +1,11 @@
 import { personalInfo, experiences, skills, projects } from '../data/portfolioData';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://127.0.0.1:8000/api';
+const API_BASE_URL =
+  process.env.REACT_APP_API_URL ||
+  (typeof window !== 'undefined' &&
+  (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://127.0.0.1:8000/api'
+    : 'https://porfolio-jsfz.onrender.com/api');
 
 /**
  * Fetches portfolio data from the Django REST API.

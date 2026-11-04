@@ -6,22 +6,6 @@ import './Experience.css';
 const defaultExperiences = [
   // Education
   {
-    year: '2018',
-    icon: <FaSchool />,
-    title: 'SSC – School Education',
-    company: 'Nethaji SubhasChandra Bose High School, Solapur',
-    description: 'Completed my Schooling',
-    type: 'education',
-  },
-  {
-    year: '2020',
-    icon: <FaSchool />,
-    title: 'Higher Secondary (Science)',
-    company: 'D.B.F. Dayanand College of Arts & Science, Solapur',
-    description: 'Completed Higher Secondary Education',
-    type: 'education',
-  },
-  {
     year: 'Jan 2021 – Jul 2024',
     icon: <FaGraduationCap />,
     title: 'B.Tech – Computer Science',

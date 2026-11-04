@@ -12,20 +12,6 @@ export const personalInfo = {
 
 export const experiences = [
   {
-    year: '2018',
-    title: 'SSC – School Education',
-    company: 'Nethaji SubhasChandra Bose High School, Solapur',
-    description: 'Completed my Schooling',
-    type: 'education'
-  },
-  {
-    year: '2020',
-    title: 'Higher Secondary (Science)',
-    company: 'D.B.F. Dayanand College of Arts & Science, Solapur',
-    description: 'Completed Higher Secondary Education',
-    type: 'education'
-  },
-  {
     year: 'Jan 2021 – Jul 2024',
     title: 'B.Tech – Computer Science',
     company: 'N.K. Orchid College of Engineering & Technology, Solapur',
